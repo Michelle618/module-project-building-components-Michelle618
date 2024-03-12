@@ -43,7 +43,7 @@ function moduleProject3() {
     const favLangP = document.createElement('p')
 
     const favLanguage = languages.find(lang => lang.id === learner.favLanguage)
-    favLangP.textContent = `Favorite Language: ${learner.favLanguage}`;
+    favLangP.textContent = `Favorite Language: ${favLanguage.name}`;
 
     [nameP, idElement, dobP, favLangP].forEach(p => {
       card.appendChild(p)
@@ -144,12 +144,13 @@ function moduleProject3() {
   // 👉 TASK 4 - Clicking on the section should deactivate the active card
 
   //  ✨ do your magic here
-  document.addEventListener('click',evt)
-    if (evt.target === document.querySelector('section')) {
-      const learners = document.querySelectorAll('learner-card')
-      learners.forEach(card => card.classList.remove('active'))
+  document.addEventListener("click", e => {
+    if (e.target === document.querySelector("section")){
+      const learners = document.querySelectorAll(".learner-card");
+      learners.forEach(card => card.classList.remove("active"))
     }
-  }
+  })
+}
 
 
 // ❗ DO NOT CHANGE THIS CODE
